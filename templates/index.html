@@ -51,8 +51,8 @@
                     id="Metode Prediksi"
                     class="p-4 bg-gray-100 rounded-md"
                 >
-		    <option value="Linear Regression">Laki-laki</option>
-                    <option value="SVM">Perempuan</option>
+		    <option value="Linear Regression">Linear Regression</option>
+                    <option value="SVM">SVM</option>
                 </select>
 <!--                <label for="Usia" class="mb-2">Usia</label>
                 <input
@@ -100,7 +100,7 @@
                         rounded-md
                     "
                 >
-                    PREDIKSI SEKARANG
+                    PREDIKSI
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
@@ -122,16 +122,16 @@
         <section class="mt-8 h-full flex-auto rounded-lg md:mt-0 md:ml-8">
             <div class="bg-white p-16 rounded-lg">
                 <h1 class="text-2xl mb-8">
-                    Estimasi biaya asuransi Anda adalah
+                    Estimasi Jumlah Mahasiswa adalah
                 </h1>
-                <h2 class="text-5xl font-bold">USD {{ insurance_cost }}</h2>
+<!--                <h2 class="text-5xl font-bold">USD {{ insurance_cost }}</h2>
                 {% if (insurance_cost) != 0 %}
                 <div class="mt-8">
                     <p>Usia: {{ age }} tahun</p>
                     <p>Jenis kelamin: {{ sex }}</p>
                     <p>Status perokok: {{ smoker }}</p>
                 </div>
-                {% endif %}
+-->                {% endif %}
             </div>
             <div class="flex justify-around bg-white p-16 rounded-lg mt-8">
 				<h1 class="text-xl font-bold mb-8">
