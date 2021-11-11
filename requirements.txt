@@ -1,3 +1,9 @@
 flask
 gunicorn
 scikit-learn
+tensorflow-cpu
+gunicorn
+pillow
+numpy
+pandas
+sklearn
