@@ -12,7 +12,7 @@ def index():
 
 @app.route('/predict', methods=['POST'])
 def predict():
-    Tahun = request.args.get('Tahun', type=int)
+    Tahun,Metode=[x for x in request.form.values()]
     return render_template('index.html', insurance_cost=Tahun)
     '''
     Predict the insurance cost based on user inputs
