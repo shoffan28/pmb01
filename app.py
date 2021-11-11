@@ -34,7 +34,7 @@ def predict():
     regr.fit (train_x, train_y)
     hasil = regr.predict([[Tahun]])
     return '''<h1>Prediksi Mahasiswa Tahun {} adalah {}</h1><p><a href="/">Kembali</a></p>'''.format(str(Tahun), str(int(hasil[0][0])))
-
+    return render_template('index.html', insurance_cost=hasil)
     '''
     Predict the insurance cost based on user inputs
     and render the result to the html page
