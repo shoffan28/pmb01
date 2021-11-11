@@ -16,7 +16,26 @@ def index():
 @app.route('/predict', methods=['POST'])
 def predict():
     Tahun,Metode=[x for x in request.form.values()]
-    return render_template('index.html', insurance_cost=Tahun, Tahun=Tahun, Metode=Metode)
+    df = pd.read_csv("mhs-2011-2021.csv")
+    data = df.loc[:, ['tahundaftar', 'jumlah']]
+    sum_data = data.groupby('tahundaftar').sum()
+
+    # Modifikasi untuk prediksi
+    sum_data.insert(0, 'tahundaftar', sum_data.index.values, True)
+
+    # Pembuatan data latih dan pengujian
+    # msk = np.random.rand(len(sum_data)) < 0.8
+    # train = sum_data[msk]
+    # test = sum_data[~msk]
+
+    # Bikin Model
+    regr = linear_model.LinearRegression()
+    train_x = np.asanyarray(sum_data[['tahundaftar']])
+    train_y = np.asanyarray(sum_data[['jumlah']])
+    regr.fit (train_x, train_y)
+    hasil = regr.predict([[Tahun]])
+    
+    return render_template('index.html', insurance_cost=hasil, Tahun=Tahun, Metode=Metode)
     '''
     Predict the insurance cost based on user inputs
     and render the result to the html page
