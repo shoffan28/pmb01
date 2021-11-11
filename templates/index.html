@@ -125,10 +125,14 @@
                     Estimasi Total Jumlah Mahasiswa adalah
                 </h1>
                 <h2 class="text-5xl font-bold"> {{ insurance_cost }}</h2>
+		    {% if (insurance_cost) != 0 %}
+		<div class="mt-8">
                     <p>Tahun: {{ Tahun }} tahun</p>
                     <p>Metode ML: {{ Metode }}</p>
+		    </div>
 <!--                {% if (insurance_cost) != 0 %}
                 <div class="mt-8">
+		{% endif %}
                     <p>Usia: {{ age }} tahun</p>
                     <p>Jenis kelamin: {{ sex }}</p>
                     <p>Status perokok: {{ smoker }}</p>
