@@ -34,7 +34,27 @@
                 method="post"
                 class="flex flex-col"
             >
-                <label for="Usia" class="mb-2">Usia</label>
+		    <label for="Tahun" class="mb-2">Tahun</label>
+                <input
+                    type="text"
+                    name="Tahun"
+                    placeholder="Tahun"
+                    required="required"
+                    class="p-4 bg-gray-100 rounded-md"
+                />
+
+                <label for="Metode Prediksi" class="mt-4 mb-2"
+                    >Metode Prediksi (Machine Learning/ML):</label
+                >
+                <select
+                    name="Metode Prediksi"
+                    id="Metode Prediksi"
+                    class="p-4 bg-gray-100 rounded-md"
+                >
+		    <option value="Linear Regression">Laki-laki</option>
+                    <option value="SVM">Perempuan</option>
+                </select>
+<!--                <label for="Usia" class="mb-2">Usia</label>
                 <input
                     type="text"
                     name="Usia"
@@ -64,7 +84,7 @@
                     <option value="Ya">Ya</option>
                     <option value="Tidak">Tidak</option>
                 </select>
-
+-->
                 <button
                     type="submit"
                     class="
@@ -114,8 +134,9 @@
                 {% endif %}
             </div>
             <div class="flex justify-around bg-white p-16 rounded-lg mt-8">
-				<h1 class="text-2xl font-bold mb-8">
-					Website Prediksi PMB Universitas developed by Shoffan Saifullah (Copyright)
+				<h1 class="text-xl font-bold mb-8">
+					Website Prediksi PMB Universitas developed by Shoffan Saifullah 
+					Copyright)
 				</h1>
                 <!--<img
                     class="h-24 md:h-28"
