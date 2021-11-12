@@ -3,7 +3,6 @@ import pickle
 import pandas as pd
 import numpy as np
 from sklearn import linear_model
-from sklearn.svm import SVC
 
 app = Flask(__name__)
 
