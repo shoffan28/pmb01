@@ -7,6 +7,3 @@ pillow
 numpy
 pandas
 sklearn
-sklearn.ensemble
-sklearn.linear_model
-sklearn.svm
