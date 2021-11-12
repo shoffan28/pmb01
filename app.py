@@ -36,7 +36,7 @@ def predict():
     if Metode=='Linear Regression':
         hasil =hasil
     else:
-        hasil=0.05*hasil
+        hasil=hasil + (0.05*hasil)
     return render_template('index.html', insurance_cost=int(abs(hasil)), Tahun=Tahun, Metode=Metode)
     '''
     Predict the insurance cost based on user inputs
