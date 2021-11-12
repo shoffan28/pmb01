@@ -4,6 +4,14 @@ import pandas as pd
 import numpy as np
 from sklearn import linear_model
 
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.ensemble import GradientBoostingClassifier
+from sklearn.linear_model import LogisticRegression
+from sklearn.naive_bayes import BernoulliNB
+from sklearn import tree
+from sklearn.ensemble import ExtraTreesClassifier
+from sklearn.svm import SVC
+
 app = Flask(__name__)
 
 model_file = open('model.pkl', 'rb')
@@ -27,15 +35,17 @@ def predict():
     # msk = np.random.rand(len(sum_data)) < 0.8
     # train = sum_data[msk]
     # test = sum_data[~msk]
-
+    
+    if matode == "Linear Regression":
     # Bikin Model
     regr = linear_model.LinearRegression()
     train_x = np.asanyarray(sum_data[['tahundaftar']])
     train_y = np.asanyarray(sum_data[['jumlah']])
     regr.fit (train_x, train_y)
     hasil = regr.predict([[Tahun]])
+    else:
     
-    return render_template('index.html', insurance_cost=hasil, Tahun=Tahun, Metode=Metode)
+    return render_template('index.html', insurance_cost=int(abs(hasil)), Tahun=Tahun, Metode=Metode)
     '''
     Predict the insurance cost based on user inputs
     and render the result to the html page
