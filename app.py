@@ -4,14 +4,6 @@ import pandas as pd
 import numpy as np
 from sklearn import linear_model
 
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.ensemble import GradientBoostingClassifier
-from sklearn.linear_model import LogisticRegression
-from sklearn.naive_bayes import BernoulliNB
-from sklearn import tree
-from sklearn.ensemble import ExtraTreesClassifier
-from sklearn.svm import SVC
-
 app = Flask(__name__)
 
 model_file = open('model.pkl', 'rb')
