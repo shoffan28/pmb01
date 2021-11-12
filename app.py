@@ -29,13 +29,14 @@ def predict():
     # test = sum_data[~msk]
     
     if matode == "Linear Regression":
-    # Bikin Model
-    regr = linear_model.LinearRegression()
-    train_x = np.asanyarray(sum_data[['tahundaftar']])
-    train_y = np.asanyarray(sum_data[['jumlah']])
-    regr.fit (train_x, train_y)
-    hasil = regr.predict([[Tahun]])
+        # Bikin Model
+        regr = linear_model.LinearRegression()
+        train_x = np.asanyarray(sum_data[['tahundaftar']])
+        train_y = np.asanyarray(sum_data[['jumlah']])
+        regr.fit (train_x, train_y)
+        hasil = regr.predict([[Tahun]])
     else:
+        hasil = 0
     
     return render_template('index.html', insurance_cost=int(abs(hasil)), Tahun=Tahun, Metode=Metode)
     '''
